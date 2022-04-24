@@ -3,6 +3,8 @@
 use App\Http\Controllers\MetodosPagoController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\TiendaController;
+use App\Http\Controllers\ConceptoController;
+use App\Http\Controllers\ConceptoTipoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebpagesController;
 use Illuminate\Support\Facades\Auth;
@@ -87,7 +89,52 @@ Route::group(['prefix' => 'admin', 'as'=>'admin.', 'middleware'=> ['rol:admin']]
                 Route::post('{metodo}', [MetodosPagoController::class, 'configurar']);
             });
         });
+    });
 
+    /** MÉTODOS DE PAGO */
+    Route::prefix('tipos')->group(function () {
+        Route::get('pizarra', [ConceptoTipoController::class, 'index'])->name('pizarraTipo');
+//
+//        Route::group(['middleware' => ['permission:Metodos de pago,Leer']], function () {
+//            Route::get('pizarra', [MetodosPagoController::class, 'index'])->name('pizarraMetodosPago');
+//        });
+
+        Route::group(['middleware' => ['permission:Metodos de pago,Editar']], function () {
+            Route::post('cambiarestado', [MetodosPagoController::class, 'cambiarestado']);
+            Route::get('get-configuracion/{id}', [MetodosPagoController::class, 'getConfig']);
+
+            Route::prefix('cambiar-configuracion')->group(function () {
+                Route::post('{metodo}', [MetodosPagoController::class, 'configurar']);
+            });
+        });
+    });
+
+    /** TIENDAS **/
+    Route::prefix('conceptos')->group(function () {
+
+        Route::post('store', [ConceptoController::class, 'store']);
+        Route::put('store/{id?}', [ConceptoController::class, 'store']);
+
+
+
+
+        Route::group(['middleware' => ['permission:Tiendas,Leer']], function () {
+            Route::get('pizarra', [TiendaController::class, 'index'])->name('pizarraTiendas');
+            Route::post('json', [TiendaController::class, 'getDataJson']);
+            Route::get('show/{id}', [TiendaController::class, 'show']);
+        });
+
+        Route::group(['middleware' => ['permission:Tiendas,Editar']], function () {
+            Route::get('new', [TiendaController::class, 'new'])->name('createTiendas');
+//            Route::post('store', [TiendaController::class, 'store']);
+            Route::get('edit/{id}', [TiendaController::class, 'edit']);
+            Route::post('block/{id}', [TiendaController::class, 'block']);
+        });
+
+        Route::group(['middleware' => ['permission:Tiendas,Borrar']], function () {
+            Route::delete('delete/{id}', [TiendaController::class, 'destroy']);
+            Route::delete('delete-multiple', [TiendaController::class, 'destroyAll']);
+        });
 
 
     });

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -26,8 +27,11 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         $version = env('APP_VERSION', '1.1');
-        view()->composer('*', function ($view) use ($version) {
-            $view->with('APP_VERSION', $version);
+        $auth_user = \auth()->user();
+
+        view()->composer('*', function ($view) use ($version,$auth_user) {
+            $view->with('APP_VERSION', $version)
+                ->with('auth_user', $auth_user);
 
         });
     }
