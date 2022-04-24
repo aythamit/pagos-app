@@ -3,6 +3,7 @@
 namespace App\Helpers;
 
 use Config;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class Helper
@@ -157,5 +158,31 @@ class Helper
                 }
             }
         }
+    }
+
+    /**
+     * @param $base64
+     * @return array
+     * Devuelve un array:
+     * [0] Nombre
+     * [1] Extensión
+     * [2] Imagen base64 sin data
+     */
+    public static function base64toStore($base64){
+        $image_64 = $base64;
+        $extension = explode('/', explode(':', substr($image_64, 0, strpos($image_64, ';')))[1])[1];   // .jpg .png .pdf
+        $replace = substr($image_64, 0, strpos($image_64, ',')+1);
+
+        $image = str_replace($replace, '', $image_64);
+        $image = str_replace(' ', '+', $image);
+        $imageName = Str::random(20).'.'.$extension;
+        return [$imageName, $extension, $image];
+    }
+
+    public static function getStoredImage($base64){
+        $img = base64_encode(Storage::disk('tiendas')->get($base64));
+        $mime = Storage::disk('tiendas')->mimeType($base64);
+        $img = "data:$mime;base64,$img";
+        return $img;
     }
 }

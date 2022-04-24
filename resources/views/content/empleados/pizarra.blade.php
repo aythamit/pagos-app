@@ -13,19 +13,11 @@
 @endsection
 
 @section('crud-styles')
-{{--    <link rel="stylesheet" href="{{ asset(mix('vendors/css/forms/select/select2.min.css')) }}">--}}
-{{--    <link rel="stylesheet" href="{{ asset(mix('vendors/css/file-uploaders/dropzone.min.css')) }}">--}}
-{{--    <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-file-uploader.css')) }}">--}}
     <link rel="stylesheet" href="{{ asset(mix('css/base/pages/ui-feather.css')) }}">
 @endsection
 
 @section('crud-scripts')
-{{--    <script src="{{ asset(mix('vendors/js/forms/select/select2.full.min.js')) }}"></script>--}}
-{{--    <script src="{{ asset(mix('vendors/js/extensions/dropzone.min.js')) }}"></script>--}}
-    <script src="{{ asset(mix('js/scripts/pages/empleados/empleados.js')). '?v='.$APP_VERSION }}"></script>
-{{--    <script src="{{ asset(mix('js/scripts/custom/custom-canvas.js')). '?v='.$APP_VERSION }}"></script>--}}
-{{--    <script src="{{asset(mix('js/scripts/ui/ui-feather.js'))}}"></script>--}}
-
+    <script src="{{ asset(mix('js/scripts/pages/empleados/pizarra.js')). '?v='.$APP_VERSION }}"></script>
 @endsection
 
 @section('form')

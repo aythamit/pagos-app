@@ -10,7 +10,7 @@
 @section('page-style')
     {{-- Page Css files --}}
     <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-validation.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('css/base/pages/app-user.css')) }}">
+{{--    <link rel="stylesheet" href="{{ asset(mix('css/base/pages/app-user.css')) }}">--}}
 @endsection
 
 @section('content')
@@ -18,15 +18,6 @@
     <section class="app-user-edit">
         <div class="card">
             <div class="card-body">
-                <ul class="nav nav-pills" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center active" id="informacion-tab" data-toggle="tab"
-                            href="#informacion" aria-controls="informacion" role="tab" aria-selected="false">
-                            <i data-feather="info"></i><span class="d-none d-sm-block">Información</span>
-                        </a>
-                    </li>
-
-                </ul>
                 <div class="tab-content">
                     <input type="hidden" id="tipoUsuario" value="{{ $user_auth->tipo }}">
                     <input type="hidden" id="method" value="{{ $method }}">
@@ -52,7 +43,11 @@
 
 @section('page-script')
     {{-- Page js files --}}
-    <script src="{{ asset(mix('js/scripts/custom/customForm.js')). '?v='.$APP_VERSION }}"></script>
+    <script src="{{ asset(mix('js/scripts/custom/custom-form.js')). '?v='.$APP_VERSION }}"></script>
+    <script src="{{ asset(mix('js/scripts/custom/custom-form-ajax-response.js')). '?v='.$APP_VERSION }}"></script>
     <script src="{{ asset(mix('js/scripts/pages/empleados/formulario.js')). '?v='.$APP_VERSION }}"></script>
     <script src="{{ asset(mix('js/scripts/components/components-navs.js')) . '?v='.$APP_VERSION}}"></script>
+    {{-- Sweet Alert --}}
+    <script src="{{ asset(mix('vendors/js/extensions/sweetalert2.all.min.js')) }}"></script>
+    <script src="{{ asset(mix('vendors/js/extensions/polyfill.min.js')) }}"></script>
 @endsection

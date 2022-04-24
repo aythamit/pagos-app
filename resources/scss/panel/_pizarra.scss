@@ -4,9 +4,21 @@
   transition: max-height 0.2s ease-out;
 }
 
-.bg-gris{
-  background-color: #dddada;
-}
+.bg-gris{background-color: #dddada;}
+
+.bg-pendiente{background-color: rgb(255, 242, 194);}
+
+.bg-pendiente-pago{background-color: rgb(242, 242, 242);}
+
+.bg-preparacion{background-color: rgb(230, 219, 255);}
+
+.bg-preparado{background-color: rgb(223, 242, 255);}
+
+.bg-transito{background-color: rgb(223, 242, 255);}
+
+.bg-finalizado{background-color: rgb(189, 237, 201);}
+
+.bg-cancelado{background-color: rgb(255, 185, 185);}
 
 .dt-button-collection{
   div[role='menu']{

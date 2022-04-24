@@ -2,7 +2,7 @@
 
 @section('title', 'Privacy Policies - ')
 
-@section('meta-description','Privacy policy of the Alomran website.')
+@section('meta-description','Privacy policy of the Ordery website.')
 
 @section('meta-robots')
     <meta name="robots" content="noindex">
@@ -21,7 +21,7 @@
         <header>
             <div class="d-flex flex-column align-items-center">
                 <a href="/" style="margin-top: 3em">
-                    <img src="/images/logos/alomran-logo.png" alt="alomran" height="90px">
+                    <img src="/images/logos/logo.png" alt="Ordery" height="90px">
                 </a>
                 <h2>PRIVACY POLICIES</h2>
             </div>

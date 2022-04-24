@@ -1,0 +1,120 @@
+@import '../../_variables';
+@import '/fonts/montserrat/css/_montserrat';
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0 !important;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+
+    ::-webkit-scrollbar {
+        width: 7px;
+        height: 7px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: lighten($black, 30);
+        border-radius: 0px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: $white;
+        border-radius: 10px;
+        box-shadow: inset 7px 10px 12px $white;
+    }
+
+    ::selection {
+        color: white;
+        background: #ddc6aa;
+    }
+}
+
+#error {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/web/background/background.svg');
+    background-position: center;
+    background-size: cover;
+
+    .codigo {
+        font-size: 10rem;
+        font-weight: bolder;
+        color: #8478FF;
+    }
+
+    .mensaje {
+        margin-top: 1em;
+        color: #68aaff;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: bold;
+    }
+
+    .duda {
+        margin-top: 2rem;
+        color: #68aaff;
+
+        a {
+            color: #438eff;
+            font-weight: bold;
+            text-decoration: none;
+            position: relative;
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            &::after {
+              position: absolute;
+              content: '';
+              bottom: 0;
+              left: 0;
+              height: 1px;
+              width: 0%;
+              border-bottom: 1px solid #93aeff;
+              transition: all .5s ease;
+            }
+
+            &:hover {
+              color: #93aeff;
+
+              &:not(.idiomas)::after {
+                width: 100%;
+              }
+            }
+          }
+    }
+
+    // Breakpoints
+    // Extra extra large
+    @media (min-width: $xxl-min) {}
+
+    // Extra large
+    @media (min-width: $xl-min) and (max-width: $xl-max) {}
+
+    // Large
+    @media (min-width: $lg-min) and (max-width: $lg-max) {}
+
+    // Medium
+    @media (min-width: $md-min) and (max-width: $md-max) {}
+
+    // Small
+    @media (min-width: $sm-min) and (max-width: $sm-max) {}
+
+    // Extra small
+    @media (max-width: $xs-max) {
+        padding: 2rem 2rem 0 2rem;
+
+        .textos {
+            padding-top: 2rem;
+        }
+    }
+}

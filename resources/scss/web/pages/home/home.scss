@@ -1,0 +1,22 @@
+@import "_header.scss";
+
+html {
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #666;
+        border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #ddd;
+        border-radius: 20px;
+    }
+}
+body{
+    background-color: white!important;
+}

@@ -1,35 +1,40 @@
 // const lang = window.location.href.split('/')[3];
 const datatable = {
-    "sLengthMenu": "Show _MENU_ rows",
-    "sSearch": "Search",
-    "sZeroRecords": "No results found",
-    "sEmptyTable": 'No data available in this table',
-    "sInfo": 'Showing records _START_ to _END_ from a total of _TOTAL_ records',
-    "sInfoEmpty": 'Showing records 0 from a total of 0 records',
-    "sInfoFiltered": "filtering of a total of",
-    "sLimpiar": 'Reset',
-    "sBusqueda": 'Advanced search',
-    "anadir": 'Add',
-    "no_tiene_permisos": 'No permissions',
-    "placeholder": 'Search by',
-
-    /* BOTONES */
-    'opciones': 'Options',
-    'campos': 'Fields',
+    "sLengthMenu1": "Ver",
+    "sLengthMenu2": "filas",
+    "sSearch": "Buscar",
+    "sZeroRecords": "No se encontraron resultados",
+    "sEmptyTable": 'Ningún dato disponible en esta tabla',
+    "sInfo1": 'Mostrando registros del',
+    "sInfo2": 'al',
+    "sInfo3": 'de un total de',
+    "sInfo4": 'registros',
+    "sInfoEmpty": 'Mostrando registros del 0 al 0 de un total de 0 registros',
+    "sInfoFiltered": "filtrado de un total de",
+    "limpiar": 'Limpiar',
+    "busqueda": 'Búsqueda avanzada',
+    "anadir": 'Añadir',
+    "no_tiene_permisos": 'No tiene permisos',
 
     /* EXPORTAR */
-    'exportar': 'Export',
-    'imprimir': 'Print',
-    'copiar': 'Copy',
+    'exportar': 'Exportar',
+    'imprimir': 'Imprimir',
+    'copiar': 'Copiar',
 
     /* ACCIONES */
-    'acciones': 'Actions',
-    'editar': 'Edit',
-    'ver': 'Show',
-    'borrar': 'Delete',
-    'bloquear': 'Block',
-    'desbloquear': 'Unblock',
+    'acciones': 'Acciones',
+    'editar': 'Editar',
+    'ver': 'Ver',
+    'borrar': 'Borrar',
+    'activar': 'Activar',
+    'activo': 'Activo',
+    'inactivo': 'Inactivo',
+    'pendiente': 'Pendiente',
+    'finalizado': 'Finalizado',
+    'bloquear': 'Bloquear',
+    'desbloquear': 'Desbloquear',
+    'desactivar': 'Desactivar',
 
-    /* RESPONSIVE POPUP */
-    'sTitle': 'Details of',
+    /* Filtros */
+    'buscarPor': 'Buscar por',
 }

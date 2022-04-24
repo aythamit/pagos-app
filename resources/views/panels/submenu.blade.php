@@ -12,7 +12,7 @@
 {{--                            <i class="{{$submenu->icon}} fa-2x"></i>--}}
                             <i data-feather="{{$submenu->icon}}"></i>
                         @endif
-                        <span class="menu-item">{{ __('locale.'.$submenu->name) }}</span>
+                        <span class="menu-item">{{ __('backpanel/menu.'.$submenu->name) }}</span>
                     </a>
                     @if (isset($submenu->submenu))
                         @include('panels/submenu', ['menu' => $submenu->submenu])

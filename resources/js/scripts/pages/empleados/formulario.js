@@ -8,7 +8,8 @@ $(function () {
     }
   });
 
-  var changePicture = $('#change-picture'),
+    const user_tipo = $('#tipo_user').val();
+    var changePicture = $('#change-picture'),
     userAvatar = $('.user-avatar'),
     form = $('.form-usuario');
 
@@ -81,14 +82,13 @@ $(function () {
       dataForm.push({ name: 'permisos',
                       value: JSON.stringify(permisos)});
 
-      let url =  `/admin/empleados/store`
+      let url =  `/${user_tipo}/empleados/store`
       let method =  `post`
       let editando = typeof $(`#userId`).val() != 'undefined';
       if(editando){
         url =  `${url}/${$(`#userId`).val()}`
         method =  `put`
       }
-
 
       $('#spinner-loading').fadeIn();
       $.ajax({
@@ -104,71 +104,19 @@ $(function () {
         }
 
       }).fail(error => {
-        let errores = error.responseJSON.errors;
-        let textoErrores = ``;
-        $.each(errores ,function(key, error){
-          $.each(error ,function(key1, errorVal){
-            textoErrores += `${errorVal} <br>`
-          })
-          // $(`#${key}`).addClass('bg-danger')
-        })
-        Swal.fire({
-          title: '¡Error!',
-          html:textoErrores,
-          type: 'error'
-        })
-
+          customFormAjaxResponse(error)
       }).always(() => {
         $('#spinner-loading').fadeOut();
       })
     }
   });
-  /* */
 
-  $('#btn-cancelar-empleado').on('click', function (e){
-    let metodo = $('#method').val();
-    let tipoUsuario = $('#tipoUsuario').val();
-
-    if (metodo == 'Ver') {
-      window.location = '/' + tipoUsuario + '/empleados/pizarra'
-    } else {
-
-      let tipo = metodo == 'Nuevo' ? 'creación' : 'edición';
-
-      Swal.fire({
-        title: '¡Atención!',
-        text: 'Se va a cancelar la ' + tipo + ' de este empleado y se perderá la información no guardada. ¿Estás seguro/a?',
-        confirmButtonClass: 'btn btn-primary',
-        type: 'warning',
-        icon: 'warning',
-        buttonsStyling: !1
-      }).then(function (value) {
-        if (value.value) {
-          window.location = '/' + tipoUsuario + '/empleados/pizarra'
-        }
-      });
+    function resultEditando(response){
+        standardAjaxResponse('¡Actualizado/a!', 'El empleado se ha actualizado correctamente', `/${user_tipo}/empleados/pizarra`);
     }
-  })
+    function resultCreando(response){
+        standardAjaxResponse('¡Listo/a!', 'El empleado se ha creado correctamente', `/${user_tipo}/empleados/pizarra`);
+    }
 });
 
-function resultEditando(response){
-  Swal.fire({
-    title: '¡Actualizado/a!',
-    text: 'El empleado se ha actualizado correctamente.',
-    confirmButtonClass: 'btn btn-primary',
-    type:'success',
-    buttonsStyling: !1
-  }).then(function (value){
-    window.location = `/admin/empleados/pizarra`
-  });
-}
-function resultCreando(response){
-  Swal.fire({
-    title: '¡Actualizado/a!',
-    text: 'El empleado se ha actualizado correctamente.',
-    confirmButtonClass: 'btn btn-primary',
-    buttonsStyling: !1
-  }).then(function (value){
-    window.location = `/admin/empleados/edit/${response.user.id}`
-  });
-}
+

@@ -42,6 +42,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'tiendas' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/tiendas'),
+            'url' => env('APP_URL') . '/storage/tiendas',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -51,6 +58,7 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
         ],
+
 
     ],
 
@@ -67,6 +75,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('storage/tiendas') => storage_path('app/public/images/tiendas'),
     ],
 
 ];

@@ -10,7 +10,7 @@
                     <span class="brand-logo">
                         <img src="{{asset('images/logo/logo.png')}}" class="logo-collapse"  width="100%" style="
                            "
-                             alt="Alomran">
+                             alt="Ordery">
                     </span>
                     <h2 class="brand-text">Ordery</h2>
                 </a>

@@ -1,0 +1,124 @@
+#main-header{
+    background: radial-gradient(circle, rgba(243,104,106,1) 0%, rgba(140,71,150,0.9192051820728291) 100%);
+
+    #menu{
+        position: absolute;
+        z-index: 9;
+        padding: 1em;
+        width: 100%;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+
+        ul{
+            list-style-type: none;
+            display: flex;
+            width: 100%;
+            justify-content: end;
+            align-items: center;
+
+            li{
+                color: white;
+
+                &:not(:nth-child(1)){
+                    margin-left: 1em;
+                }
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    #header{
+        height: 60vh;
+        overflow: hidden;
+        position: relative;
+
+        .custom-shape-divider-bottom-1650571668 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .custom-shape-divider-bottom-1650571668 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 120px;
+        }
+
+        .custom-shape-divider-bottom-1650571668 .shape-fill {
+            fill: #FFFFFF;
+        }
+
+        background:
+            radial-gradient(ellipse at center, rgba(0,0,255,0.3) 0%, rgba(0,0,0,0) 70%), /* niebieski */
+            radial-gradient(ellipse at center, rgba(255,0,0,0.3) 0%, rgba(0,0,0,0) 70%), /*czerwony */
+            radial-gradient(ellipse at center, rgba(0,255,0,0.3) 0%, rgba(0,0,0,0) 70%); /*zielony */
+        background-repeat:
+            no-repeat,
+            no-repeat,
+            no-repeat;
+        background-size:
+            900px 900px,
+            900px 900px,
+            900px 900px;
+        background-attachment: fixed;
+        background-position: center;
+
+        animation:bganimation 30s infinite;
+
+        #title{
+            margin-left: 5em;
+            margin-top: 3em;
+            h1 {
+                font-family: 'Poppins', sans-serif;
+                font-size: 25vmin;
+                line-height: 20vmin;
+                color: rgb(255 255 255 / 24%);
+            }
+
+            p{
+                font-size: 3rem;
+                color: white;
+                //text-shadow: 3px 3px 5px #b7b7b7ba;
+                margin-left: 0.5em;
+                font-weight: 700;
+            }
+        }
+
+
+
+    }
+}
+
+
+@keyframes bganimation
+{
+    0%   {
+        background-position:
+            -100% -100%,
+            150% 150%,
+            -100% 200%,
+            100% 0%;
+    }
+    50% {
+        background-position:
+            150% 100%,
+            -100% 0%,
+            100% 0%,
+            0% 100%;
+    }
+    100% {
+        background-position:
+            -100% -100%,
+            150% 150%,
+            -100% 200%,
+            100% 0%;
+    }
+}

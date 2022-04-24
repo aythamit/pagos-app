@@ -12,27 +12,20 @@ function checkValidity(el) {
 }
 
 // To initialize flatpicker
-function initFlatPicker(pickrClass, range = false) {
-    let basicPickr = $('.' + pickrClass);
+function initFlatPicker(pickrClass, options=null) {
+
+    let basicPickr = typeof(pickrClass) === 'string' ? $('.' + pickrClass) : pickrClass;
 
     if (basicPickr.length) {
-        if (!range) {
-            flatpicker = basicPickr.flatpickr({
-                locale: 'es',
-                altInput: true,
-                altFormat: 'd/m/Y',
-                dateFormat: 'Y-m-d'
-            });
-        } else {
-            flatpicker = basicPickr.flatpickr({
-                locale: 'es',
-                mode: 'range',
-                altInput: true,
-                altFormat: 'd/m/Y',
-                dateFormat: 'Y-m-d'
-
-            });
-        }
+        let allowInput = (options !== null && options.hasOwnProperty('allowInput')) ? options.allowInput : true;
+        flatpicker = basicPickr.flatpickr({
+            locale: 'es',
+            altInput: true,
+            allowInput: allowInput,
+            altFormat: 'd/m/Y',
+            dateFormat: 'Y-m-d',
+            ...options
+        });
     }
 }
 
@@ -297,7 +290,7 @@ function initForm(nameCrud, options) {
                 allowEscapeKey: false
             }).then((result) => {
                 // Si no existe la función de "No ir a editar" nos lleva a la pizarra del módulo
-                if (!options.dontGoToEdit) {
+                if (options.goToEdit) {
                     // Si existe la opción de cerrar modal, simplemente cerramos el modal en vez de ir a otra página y recargamos la tabla
                     if (options.closeModal) {
                         $('#modals-slide-' + nameCrud).modal('hide');

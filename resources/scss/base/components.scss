@@ -39,3 +39,37 @@
 @import 'plugins/forms/select2/select2';
 @import 'plugins/tables/datatables';
 @import 'plugins/forms/form-number-input'; // ? globally required for cart dropdown
+
+#spinner-loading {
+    position:fixed;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999999999;
+    background-color: rgb(0,0,0,0.2);
+    .spinner-border {
+        display: block;
+        position: fixed;
+        top: calc(50% - (58px / 2));
+        right: calc(50% - (58px / 2));
+        color: $primary;
+    }
+}
+
+.header-navbar{
+    #navbar-enlaces{
+        li.active{
+            background: linear-gradient(118deg, #7367f0, rgba(115, 103, 240, 0.7));
+            box-shadow: 0 0 10px 1px rgb(115 103 240 / 70%);
+            border-radius: 4px;
+            z-index: 1;
+            color: white;
+            padding: 2px;
+
+            a.active{
+                color: white!important;
+                text-shadow: 2px 2px 4px rgba(20, 20, 20, 0.75);
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 @extends('layouts/contentLayoutMaster')
 
-@section('title', $method . ' ' . $nameCrud)
+
 
 @section('page-style')
     @yield('crud-styles')
@@ -11,7 +11,9 @@
     <section class="app-user-list">
         <div class="card">
             <div class="card-body">
-                @yield('form')
+                <div class="tab-content">
+                    @yield('form')
+                </div>
             </div>
         </div>
     </section>

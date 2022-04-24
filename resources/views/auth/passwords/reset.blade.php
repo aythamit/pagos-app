@@ -15,7 +15,7 @@
     <div class="card mb-0">
       <div class="card-body">
         <a href="javascript:void(0);" class="brand-logo">
-          <img class="img-fluid" width="60%" style="height:100%;max-height: 100px !important;" src="{{asset('images/logo/alomran.png')}}" alt="logo ziegel">
+          <img class="img-fluid" width="60%" style="height:100%;max-height: 100px !important;" src="{{asset('images/logo/logo.png')}}" alt="logo ordery">
         </a>
         @if(isset($enlace_caducado) && $enlace_caducado)
           <span class="text-danger mb-50" role="alert">

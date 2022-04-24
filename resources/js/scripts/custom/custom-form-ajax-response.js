@@ -58,12 +58,12 @@ function customFormAjaxResponse(errores) {
     }
 }
 
-function standardAjaxResponse(title, text, url = null) {
+function standardAjaxResponse(title, text, url = null, type = 'success') {
     Swal.fire({
         title: title,
         text: text,
         confirmButtonClass: 'btn btn-primary',
-        icon: 'success',
+        icon: type,
         buttonsStyling: !1
     }).then(function (value) {
         if (url != null) {

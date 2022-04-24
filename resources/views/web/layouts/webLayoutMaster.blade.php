@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title') Order Manager — Realiza tu súper pedido</title>
-    <meta name="title" content="Alomran — Maritime Services & Logistics Company">
+    <title>@yield('title') Order Manager — Pide a tu tienda favorita</title>
+    <meta name="title" content="Ordery — Pide a tu tienda favorita">
     <meta name="description" content="@yield('meta-description')">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/logo/favicon.ico') }}">
     {{-- INDEXAR (si se desea) LAS PÁGINAS SOLO SI ESTOY EN PRODUCCIÓN --}}
@@ -22,18 +22,18 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{env('app_url')}}">
-    <meta property="og:title" content="Alomran — Maritime Services & Logistics Company">
+    <meta property="og:title" content="Ordery - Pide a tu tienda favorita">
     <meta property="og:description" content="Al Omran United Maritime Services & Logistics Company as a highly proficient team combined of experienced as well as young...">
     <meta property="og:image" content="{{asset('/images/logos/image-meta.png')}}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{env('app_url')}}">
-    <meta property="twitter:title" content="Alomran — Maritime Services & Logistics Company">
+    <meta property="twitter:title" content="Ordery - Pide a tu tienda favorita">
     <meta property="twitter:description" content="Al Omran United Maritime Services & Logistics Company as a highly proficient team combined of experienced as well as young...">
     <meta property="twitter:image" content="{{asset('/images/logos/image-meta.png')}}">
     {{-- Include Styles --}}
-    {{-- <link rel="stylesheet" href="{{ asset('fonts/font-awesome/css/font-awesome.min.css')}}" crossorigin="anonymous"> --}}
+     <link rel="stylesheet" href="{{ asset('fonts/font-awesome/css/all.min.css')}}" crossorigin="anonymous">
 {{--    <link rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;"--}}
 {{--          rel="stylesheet" href="{{ asset(mix('css/web/core/bootstrap.css')) }}" crossorigin="anonymous">--}}
 {{--    <link rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;"--}}

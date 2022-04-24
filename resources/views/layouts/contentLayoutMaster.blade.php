@@ -7,10 +7,7 @@
 $configData = Helper::applClasses();
 @endphp
 
-<html class="loading {{ ($configData['theme'] === 'light') ? '' : $configData['layoutTheme']}}"
-lang="@if(session()->has('locale')){{session()->get('locale')}}@else{{$configData['defaultLanguage']}}@endif"
-data-textdirection="{{ env('MIX_CONTENT_DIRECTION') === 'rtl' ? 'rtl' : 'ltr' }}"
-@if($configData['theme'] === 'dark') data-layout="dark-layout" @endif>
+<html lang="@if(session()->has('locale')){{session()->get('locale')}}@else{{$configData['defaultLanguage']}}@endif" data-textdirection="{{ env('MIX_CONTENT_DIRECTION') === 'rtl' ? 'rtl' : 'ltr' }}" class="{{ ($configData['theme'] === 'light') ? '' : $configData['layoutTheme'] }}">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,7 +20,9 @@ data-textdirection="{{ env('MIX_CONTENT_DIRECTION') === 'rtl' ? 'rtl' : 'ltr' }}
   <title>@yield('title') - Vuexy - Bootstrap HTML & Laravel admin template</title>
   <link rel="apple-touch-icon" href="{{asset('images/ico/apple-icon-120.png')}}">
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('images/logo/favicon.ico')}}">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('fonts/font-awesome/css/all.min.css')}}" crossorigin="anonymous"><meta property="og:title" content="Ordery">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
   {{-- Include core + vendor Styles --}}
   @include('panels/styles')
@@ -32,7 +31,11 @@ data-textdirection="{{ env('MIX_CONTENT_DIRECTION') === 'rtl' ? 'rtl' : 'ltr' }}
 </head>
 <!-- END: Head-->
 
+<input type="hidden" id="tipo_user" value="{{$user_auth->tipo}}">
+<input type="hidden" id="method" value="{{ @$method }}">
+
 <!-- BEGIN: Body-->
+@include('panels.loading')
 @isset($configData["mainLayoutType"])
 @extends((( $configData["mainLayoutType"] === 'horizontal') ? 'layouts.horizontalLayoutMaster' :
 'layouts.verticalLayoutMaster' ))

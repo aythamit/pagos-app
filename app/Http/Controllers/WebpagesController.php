@@ -42,6 +42,11 @@ class WebpagesController extends Controller
         return view('/web/pages/politicas/aviso-legal');
     }
 
+    // MANTENIMIENTO
+    public function maintenance(Request $request){
+        return view('errors.maintenance');
+    }
+
     // APPEND VIEW PARA SEO
 //    public function appendViews(){
 //        // Servicios

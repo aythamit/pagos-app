@@ -1,0 +1,101 @@
+{
+    "menu": [
+        {
+            "routeName": "tienda.dashboard",
+            "name": "Dashboard",
+            "url": "",
+            "icon": "home",
+            "slug": "tienda.dashboard",
+            "mostrar_siempre": true
+        },
+        {
+            "name": "Empleados",
+            "icon": "users",
+            "slug": "",
+            "submenu": [
+                {
+                    "routeName": "tienda.pizarraEmpleados",
+                    "url": "",
+                    "name": "Ver empleados",
+                    "icon": "circle",
+                    "slug": "tienda.pizarraEmpleados",
+                    "permiso_nombre": "Leer",
+                    "permiso_modulo": "Empleados"
+                },
+                {
+                    "routeName": "tienda.createEmpleado",
+                    "url": "",
+                    "name": "Nuevo empleado",
+                    "icon": "circle",
+                    "slug": "tienda.createEmpleado",
+                    "permiso_nombre": "Editar",
+                    "permiso_modulo": "Empleados"
+                }
+            ]
+        },
+        {
+            "name": "Pedidos",
+            "icon": "box",
+            "slug": "",
+            "submenu": [
+                {
+                    "routeName": "tienda.pizarraPedidos",
+                    "url": "",
+                    "name": "Ver pedidos",
+                    "icon": "circle",
+                    "slug": "tienda.pizarraPedidos",
+                    "permiso_nombre": "Leer",
+                    "permiso_modulo": "Pedidos"
+                },
+                {
+                    "routeName": "",
+                    "url": "",
+                    "name": "Nuevo pedido",
+                    "icon": "circle",
+                    "slug": "",
+                    "permiso_nombre": "Editar",
+                    "permiso_modulo": "Pedidos"
+                }
+            ]
+        },
+        {
+            "name": "Tiendas",
+            "icon": "briefcase",
+            "slug": "",
+            "submenu": [
+                {
+                    "routeName": "admin.pizarraTiendas",
+                    "url": "",
+                    "name": "Ver tiendas",
+                    "icon": "circle",
+                    "slug": "admin.pizarraTiendas",
+                    "permiso_nombre": "Leer",
+                    "permiso_modulo": "Tiendas"
+                },
+                {
+                    "routeName": "admin.createTiendas",
+                    "url": "",
+                    "name": "Nueva tienda",
+                    "icon": "circle",
+                    "slug": "admin.createTiendas",
+                    "permiso_nombre": "Editar",
+                    "permiso_modulo": "Tiendas"
+                }
+            ]
+        },
+        {
+            "routeName": "admin.pizarraMetodosPago",
+            "name": "Métodos de pago",
+            "icon": "credit-card",
+            "slug": "admin.pizarraMetodosPago",
+            "permiso_nombre": "Leer",
+            "permiso_modulo": "Metodos de pago"
+        },
+
+
+        {
+            "navheader": "Configuración",
+            "slug": ""
+        }
+    ]
+}

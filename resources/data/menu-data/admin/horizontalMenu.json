@@ -1,0 +1,4 @@
+{"menu": [
+    {"routeName":"admin.pizarraEmpleados","url":"", "name":"Empleados", "slug":"admin.pizarraEmpleados", "tip":"Ver empleados", "permiso_nombre": "Leer", "permiso_modulo": "Empleados"},
+    {"routeName":"admin.pizarraTiendas","url":"", "name":"Tiendas", "slug":"admin.pizarraTiendas", "tip":"Ver tiendas", "permiso_nombre": "Leer", "permiso_modulo": "Tiendas"}
+]}

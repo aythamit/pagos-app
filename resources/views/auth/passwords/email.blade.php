@@ -14,7 +14,7 @@
     <div class="card mb-0">
       <div class="card-body">
         <a href="javascript:void(0);" class="brand-logo">
-          <img class="img-fluid" width="60%" style="height:100%;" src="{{asset('images/logo/alomran.png')}}" alt="logo ziegel">
+          <img class="img-fluid" width="60%" style="height:100%;" src="{{asset('images/logo/logo.png')}}" alt="logo Ordery">
         </a>
 
         <h4 class="card-title mb-1">Forgot your password? 🔒</h4>

@@ -52,4 +52,9 @@ class LoginController extends Controller
             'pageConfigs' => $pageConfigs
         ]);
     }
+
+    protected function authenticated(Request $request, $user)
+    {
+            return redirect()->route("$user->tipo.dashboard");
+    }
 }

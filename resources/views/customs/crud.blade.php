@@ -1,22 +1,17 @@
 @extends('layouts/contentLayoutMaster')
 
-@section('title', 'Manage ' . $nameCrud)
+@section('title', 'Gestionar ' . $nameCrud)
 
 @section('vendor-style')
     {{-- Vendor Css files --}}
     <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/dataTables.bootstrap5.min.css')) }}">
     <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/responsive.bootstrap5.min.css')) }}">
     <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/buttons.bootstrap5.min.css')) }}">
-{{--    --}}{{-- Quill Editor Css files --}}
-{{--    <link rel="stylesheet" href="{{ asset(mix('vendors/css/editors/quill/katex.min.css')) }}">--}}
-{{--    <link rel="stylesheet" href="{{ asset(mix('vendors/css/editors/quill/monokai-sublime.min.css')) }}">--}}
-{{--    <link rel="stylesheet" href="{{ asset(mix('vendors/css/editors/quill/quill.snow.css')) }}">--}}
-{{--    <link rel="stylesheet" href="{{ asset(mix('vendors/css/editors/quill/quill.bubble.css')) }}">--}}
-{{--    <!-- vendor css files -->--}}
+
     <link rel="stylesheet" href="{{ asset(mix('vendors/css/animate/animate.min.css')) }}">
 {{--    --}}{{-- Flatpicker --}}
 {{--    <link rel="stylesheet" href="{{ asset(mix('vendors/css/pickers/pickadate/pickadate.css')) }}">--}}
-    <link rel="stylesheet" href="{{ asset(mix('vendors/css/pickers/flatpickr/flatpickr.min.css')) }}">
+{{--    <link rel="stylesheet" href="{{ asset(mix('vendors/css/pickers/flatpickr/flatpickr.min.css')) }}">--}}
 @endsection
 
 @section('page-style')
@@ -34,7 +29,7 @@
         <!-- list section start -->
         <div class="card">
             @yield('content-top')
-            <div id="{{$nameCrud}}-parent-table" class="card-datatable table-responsive pt-0">
+            <div id="{{$nameCrud}}-parent-table" class="card-datatable table-responsive pt-0" style="overflow: inherit;">
                 <table id="{{$nameCrud}}-table" class="user-list-table table">
                     <thead class="thead-light">
                     <tr>
@@ -103,7 +98,8 @@
     {{-- Page js files --}}
     <script src="{{ asset(mix('js/scripts/custom/custom-datatable.js')) }}"></script>
     <script src="{{ asset(mix('js/scripts/custom/custom-form.js')) }}"></script>
-{{--    <script src="{{ asset('lang/en/backpanel/alertas.js') }}"></script>--}}
-    <script src="{{ asset(('lang/en/backpanel/datatable.js')) }}"></script>
+    <script src="{{ asset(mix('js/scripts/custom/custom-form-ajax-response.js')). '?v='.$APP_VERSION }}"></script>
+    <script src="{{ asset('lang/es/backpanel/alertas.js') }}"></script>
+    <script src="{{ asset(('lang/es/backpanel/datatable.js')) }}"></script>
     @yield('crud-scripts')
 @endsection
