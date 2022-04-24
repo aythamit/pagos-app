@@ -1,0 +1,60 @@
+.content-principal {
+    //display: grid;
+    //grid-template-columns: 1fr 1fr;
+    //grid-template-rows: 1fr 1fr;
+    //gap: 0px 0px;
+    //grid-auto-flow: row;
+    //grid-template-areas:
+    //"conceptos-pendientes tipos-stats"
+    //"conceptos-pagados tipos-stats";
+}
+
+.tipos-stats {
+    background: pink;
+    //grid-area: tipos-stats;
+}
+
+.conceptos-pendientes {
+    .conceptos-pendientes-content{
+        display: flex;
+        flex-direction: row;
+        //grid-area: conceptos-pendientes;
+    }
+
+    .card-conceptos-pendientes {
+        flex: 0 0 auto;
+        width: 49%;
+
+        &:first-child {
+            margin-right: 0.5rem;
+        }
+
+        .text-nombre{
+            padding: .75rem .75rem;
+            margin: 0;
+            text-align: center;
+        }
+    }
+}
+
+.conceptos-pagados {
+    .conceptos-pagados-content{
+        display: flex;
+        flex-direction: row;
+        //grid-area: conceptos-pendientes;
+    }
+    .card-conceptos-pagados {
+        flex: 0 0 auto;
+        width: 49%;
+
+        &:first-child {
+            margin-right: 0.5rem;
+        }
+
+        .text-nombre{
+            padding: .75rem .75rem;
+            margin: 0;
+            text-align: center;
+        }
+    }
+}

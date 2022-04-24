@@ -51,45 +51,6 @@ Route::group(['prefix' => 'admin', 'as'=>'admin.', 'middleware'=> ['rol:admin']]
 
     });
 
-    /** TIENDAS **/
-    Route::prefix('tiendas')->group(function () {
-        Route::group(['middleware' => ['permission:Tiendas,Leer']], function () {
-            Route::get('pizarra', [TiendaController::class, 'index'])->name('pizarraTiendas');
-            Route::post('json', [TiendaController::class, 'getDataJson']);
-            Route::get('show/{id}', [TiendaController::class, 'show']);
-        });
-
-        Route::group(['middleware' => ['permission:Tiendas,Editar']], function () {
-            Route::get('new', [TiendaController::class, 'new'])->name('createTiendas');
-            Route::post('store', [TiendaController::class, 'store']);
-            Route::put('store/{id?}', [TiendaController::class, 'store']);
-            Route::get('edit/{id}', [TiendaController::class, 'edit']);
-            Route::post('block/{id}', [TiendaController::class, 'block']);
-        });
-
-        Route::group(['middleware' => ['permission:Tiendas,Borrar']], function () {
-            Route::delete('delete/{id}', [TiendaController::class, 'destroy']);
-            Route::delete('delete-multiple', [TiendaController::class, 'destroyAll']);
-        });
-
-
-    });
-
-    /** MÉTODOS DE PAGO */
-    Route::prefix('metodospago')->group(function () {
-        Route::group(['middleware' => ['permission:Metodos de pago,Leer']], function () {
-            Route::get('pizarra', [MetodosPagoController::class, 'index'])->name('pizarraMetodosPago');
-        });
-
-        Route::group(['middleware' => ['permission:Metodos de pago,Editar']], function () {
-            Route::post('cambiarestado', [MetodosPagoController::class, 'cambiarestado']);
-            Route::get('get-configuracion/{id}', [MetodosPagoController::class, 'getConfig']);
-
-            Route::prefix('cambiar-configuracion')->group(function () {
-                Route::post('{metodo}', [MetodosPagoController::class, 'configurar']);
-            });
-        });
-    });
 
     /** MÉTODOS DE PAGO */
     Route::prefix('tipos')->group(function () {
@@ -138,7 +99,52 @@ Route::group(['prefix' => 'admin', 'as'=>'admin.', 'middleware'=> ['rol:admin']]
 
 
     });
+
+    /** TIENDAS **/
+    Route::prefix('tiendas')->group(function () {
+        Route::group(['middleware' => ['permission:Tiendas,Leer']], function () {
+            Route::get('pizarra', [TiendaController::class, 'index'])->name('pizarraTiendas');
+            Route::post('json', [TiendaController::class, 'getDataJson']);
+            Route::get('show/{id}', [TiendaController::class, 'show']);
+        });
+
+        Route::group(['middleware' => ['permission:Tiendas,Editar']], function () {
+            Route::get('new', [TiendaController::class, 'new'])->name('createTiendas');
+            Route::post('store', [TiendaController::class, 'store']);
+            Route::put('store/{id?}', [TiendaController::class, 'store']);
+            Route::get('edit/{id}', [TiendaController::class, 'edit']);
+            Route::post('block/{id}', [TiendaController::class, 'block']);
+        });
+
+        Route::group(['middleware' => ['permission:Tiendas,Borrar']], function () {
+            Route::delete('delete/{id}', [TiendaController::class, 'destroy']);
+            Route::delete('delete-multiple', [TiendaController::class, 'destroyAll']);
+        });
+
+
+    });
+
+    /** MÉTODOS DE PAGO */
+    Route::prefix('metodospago')->group(function () {
+        Route::group(['middleware' => ['permission:Metodos de pago,Leer']], function () {
+            Route::get('pizarra', [MetodosPagoController::class, 'index'])->name('pizarraMetodosPago');
+        });
+
+        Route::group(['middleware' => ['permission:Metodos de pago,Editar']], function () {
+            Route::post('cambiarestado', [MetodosPagoController::class, 'cambiarestado']);
+            Route::get('get-configuracion/{id}', [MetodosPagoController::class, 'getConfig']);
+
+            Route::prefix('cambiar-configuracion')->group(function () {
+                Route::post('{metodo}', [MetodosPagoController::class, 'configurar']);
+            });
+        });
+    });
 });
+
+
+
+
+
 
 Route::group(['prefix' => 'tienda', 'as'=>'tienda.', 'middleware'=> ['rol:tienda']], function () {
     Route::get('dashboard', [DashboardController::class, 'indexTienda'])->name('dashboard');

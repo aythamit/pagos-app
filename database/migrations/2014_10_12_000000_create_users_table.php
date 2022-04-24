@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('tipo')->default('empleado');
             $table->string('cargo_empresa')->nullable();
             $table->string('descripcion')->nullable();
+            $table->string('color')->nullable();
             $table->string('rol')->nullable();
             $table->longText('imagen')->nullable();
             $table->string('email')->unique();

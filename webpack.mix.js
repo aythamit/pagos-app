@@ -127,6 +127,14 @@ mixAssetsDir('scss/panel/!(_)*.scss', (src, dest) =>
         //}) // Agregar esta línea
 );
 
+/*** FICHEROS DEL MODULO BACK PANEL */
+mixAssetsDir('scss/content/**/!(_)*.scss', (src, dest) =>
+        mix.sass(src, dest.replace(/(\\|\/)scss(\\|\/)/, '$1css$2').replace(/\.scss$/, '.css'), {sassOptions})
+    //.purgeCss({
+    //    enabled: purge_enabled,
+    //}) // Agregar esta línea
+);
+
 /*** FICHEROS DE EXTENSIONES */
 mixAssetsDir('scss/extensions/!(_)*.scss', (src, dest) =>
     mix.sass(src, dest.replace(/(\\|\/)scss(\\|\/)/, '$1css$2').replace(/\.scss$/, '.css'), {sassOptions})
