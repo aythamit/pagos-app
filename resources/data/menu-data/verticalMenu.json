@@ -1,0 +1,34 @@
+{
+    "menu": [
+        {
+            "name": "Dashboard",
+            "url": "dashboard",
+            "icon": "home",
+            "slug": "dashboard",
+            "mostrar_siempre": true
+        },
+        {
+            "name": "Empleados",
+            "icon": "user",
+            "slug": "",
+            "submenu": [
+                {
+                    "routeName": "admin.pizarraEmpleados",
+                    "url": "",
+                    "name": "Ver empleados",
+                    "icon": "circle",
+                    "slug": "admin.pizarraEmpleados",
+                    "permiso_nombre": "",
+                    "permiso_modulo": "",
+                    "mostrar_siempre": true
+                }
+            ]
+        },
+
+
+        {
+            "navheader": "Apps & Pages",
+            "slug": ""
+        }
+    ]
+}

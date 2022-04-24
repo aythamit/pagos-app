@@ -1,0 +1,24 @@
+/* DROPZONE */
+.dropzone{
+  border: 2px dashed #d0d0d0!important;
+
+  .dz-message{
+    color: #ababab!important;
+
+    &:before{
+      color: #b5b5b5!important;
+      width: 40px!important;
+      height: 40px!important;
+    }
+  }
+}
+
+/* SELECT2 */
+.select2-selection__arrow{
+  height: 100%!important;
+  b{
+    border-color: rgba(136, 136, 136, 0.42) transparent transparent transparent!important;
+    margin-left: -15px!important;
+    padding: 0!important;
+  }
+}

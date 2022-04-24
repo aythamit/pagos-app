@@ -1,0 +1,58 @@
+.rowFiltros{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.bg-gris{
+  background-color: #dddada;
+}
+
+.dt-button-collection{
+  div[role='menu']{
+    padding: 0.5em;
+    border-radius: 5px;
+    .dt-button:nth-child(-n + 2){
+      display: none;
+    }
+    .dt-button {
+      width: 100%;
+      box-shadow: none;
+      font-weight: 500;
+      border: none;
+      background-color: #ffffff;
+      color: black;
+
+
+      &.active {
+        background-color: #283492!important;
+        color: white;
+      }
+    }
+    .dt-button:hover{
+      background-color: #e8e8e8;
+    }
+  }
+}
+
+// RESPONSIVE PIZARRA
+@media only screen and (min-width : 280px) and (max-width : 1023px) {
+  .dt-action-buttons{
+    width: 100%;
+    .dt-buttons{
+      flex-flow: wrap;
+      width: 100%;
+    }
+  }
+  .rowFiltros > div{
+    margin: 0!important;
+    div{
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+  }
+  .dataTables_length{
+    text-align: center!important;
+  }
+}
